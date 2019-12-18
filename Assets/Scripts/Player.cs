@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
     public float stun = 0f;
     private float coolDown;
     private float anotherTimer;
-    public bool pickedUpPowerUp = false;
+    public bool pickedUpPowerUpMini = false;
+    public bool pickedUpPowerUpSlow = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +38,14 @@ public class Player : MonoBehaviour
         {
             case false:
                 if (stun <= 0f) control.enabled = true;
+                else control.enabled = false;
                 break;
             case true:
                 control.enabled = false;
                 break;
             default:
                 if (stun <= 0f) control.enabled = true;
+                else control.enabled = false;
                 break;
         }
         if (stun > 0f)
@@ -84,11 +87,17 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "PowerUpMini")
+        if (collision.gameObject.tag == "PowerUpSlow")
         {
             Destroy(collision.gameObject);
             Debug.Log("picked up slow??");
-            pickedUpPowerUp = true;
+            pickedUpPowerUpSlow = true;
+        }
+        if (collision.gameObject.tag == "PowerUpMini")
+        {
+            Destroy(collision.gameObject);
+            Debug.Log("picked up mini??");
+            pickedUpPowerUpMini = true;
         }
         if (collision.gameObject.tag == "PowerUpSpeed")
         {

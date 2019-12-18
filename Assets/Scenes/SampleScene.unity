@@ -186,7 +186,8 @@ MonoBehaviour:
   encounterTrigger: 0
   inMinigame: 0
   stun: 0
-  pickedUpPowerUp: 0
+  pickedUpPowerUpMini: 0
+  pickedUpPowerUpSlow: 0
 --- !u!54 &110293942
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1572,7 +1573,8 @@ MonoBehaviour:
   encounterTrigger: 0
   inMinigame: 0
   stun: 0
-  pickedUpPowerUp: 0
+  pickedUpPowerUpMini: 0
+  pickedUpPowerUpSlow: 0
 --- !u!1 &803070611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,7 +1975,8 @@ MonoBehaviour:
   encounterTrigger: 0
   inMinigame: 0
   stun: 0
-  pickedUpPowerUp: 0
+  pickedUpPowerUpMini: 0
+  pickedUpPowerUpSlow: 0
 --- !u!54 &1072674850
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3081,7 +3084,8 @@ MonoBehaviour:
   encounterTrigger: 0
   inMinigame: 0
   stun: 0
-  pickedUpPowerUp: 0
+  pickedUpPowerUpMini: 0
+  pickedUpPowerUpSlow: 0
 --- !u!54 &1784187070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3456,6 +3460,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: e9dcb258ed3c4d4479ec9d4d4c726188, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c160f03d0f9577646afd5b9c5c8562ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9dcb258ed3c4d4479ec9d4d4c726188, type: 3}
 --- !u!1001 &2047949796

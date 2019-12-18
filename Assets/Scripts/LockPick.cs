@@ -37,6 +37,12 @@ public class LockPick : MonoBehaviour
             pickCount++;
             stickUpDown = false;
         }
+
+        if(pickCount >= 10)
+        {
+
+            mini.finish = true;
+        }
     }
     private void Reset()
     {

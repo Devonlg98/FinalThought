@@ -19,14 +19,29 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(players[0].pickedUpPowerUp == true)
+        //Freeze stun players
+        if (players[0].pickedUpPowerUpSlow == true)
         {
             Debug.Log("Player1 slow manager??");
+            players[1].stun = 3f;
+            players[2].stun = 3f;
+            players[3].stun = 3f;
+
+            players[0].pickedUpPowerUpSlow = false;
+        }
+
+        //Bomb Play mini
+        if (players[0].pickedUpPowerUpMini == true)
+        {
+            Debug.Log("Player1 slow manager??");
+            players[0].inMinigame = true;
             AssignMinigame(1);
             AssignMinigame(2);
             AssignMinigame(3);
-            players[0].pickedUpPowerUp = false;
+            players[0].pickedUpPowerUpMini = false;
         }
+
+        //Trigger encounter
         if (players[0].encounterTrigger == true)
         {
             if (!players[0].inMinigame)
@@ -37,12 +52,22 @@ public class PlayerManager : MonoBehaviour
         }
 
 
-        if (players[1].pickedUpPowerUp == true)
+        if (players[1].pickedUpPowerUpSlow == true)
+        {
+            Debug.Log("Player1 slow manager??");
+            players[2].stun = 3f;
+            players[3].stun = 3f;
+            players[0].stun = 3f;
+
+            players[1].pickedUpPowerUpSlow = false;
+        }
+
+        if (players[1].pickedUpPowerUpMini == true)
         {
             AssignMinigame(0);
             AssignMinigame(2);
             AssignMinigame(3);
-            players[1].pickedUpPowerUp = false;
+            players[1].pickedUpPowerUpMini = false;
         }
         if (players[1].encounterTrigger == true)
         {
@@ -53,12 +78,22 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
-        if (players[2].pickedUpPowerUp == true)
+        if (players[2].pickedUpPowerUpSlow == true)
+        {
+            Debug.Log("Player1 slow manager??");
+            players[2].stun = 3f;
+            players[3].stun = 3f;
+            players[0].stun = 3f;
+
+            players[2].pickedUpPowerUpSlow = false;
+        }
+
+        if (players[2].pickedUpPowerUpMini == true)
         {
             AssignMinigame(1);
             AssignMinigame(0);
             AssignMinigame(3);
-            players[2].pickedUpPowerUp = false;
+            players[2].pickedUpPowerUpMini = false;
         }
         if (players[2].encounterTrigger == true)
         {
@@ -69,12 +104,22 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
-        if (players[3].pickedUpPowerUp == true)
+
+        if (players[3].pickedUpPowerUpSlow == true)
+        {
+            Debug.Log("Player1 slow manager??");
+            players[0].stun = 3f;
+            players[1].stun = 3f;
+            players[2].stun = 3f;
+
+            players[3].pickedUpPowerUpSlow = false;
+        }
+        if (players[3].pickedUpPowerUpMini == true)
         {
             AssignMinigame(1);
             AssignMinigame(2);
             AssignMinigame(0);
-            players[3].pickedUpPowerUp = false;
+            players[3].pickedUpPowerUpMini = false;
         }
         if (players[3].encounterTrigger == true)
         {
